@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/odtest/static/css/main.05310047.chunk.css",
+    "main.js": "/odtest/static/js/main.66bc1ee0.chunk.js",
+    "main.js.map": "/odtest/static/js/main.66bc1ee0.chunk.js.map",
+    "runtime-main.js": "/odtest/static/js/runtime-main.d604612f.js",
+    "runtime-main.js.map": "/odtest/static/js/runtime-main.d604612f.js.map",
+    "static/js/2.50a2bbb0.chunk.js": "/odtest/static/js/2.50a2bbb0.chunk.js",
+    "static/js/2.50a2bbb0.chunk.js.map": "/odtest/static/js/2.50a2bbb0.chunk.js.map",
+    "index.html": "/odtest/index.html",
+    "static/css/main.05310047.chunk.css.map": "/odtest/static/css/main.05310047.chunk.css.map",
+    "static/js/2.50a2bbb0.chunk.js.LICENSE.txt": "/odtest/static/js/2.50a2bbb0.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/odtest/static/media/LabGrotesque-Regular.f45d8fdb.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d604612f.js",
+    "static/js/2.50a2bbb0.chunk.js",
+    "static/css/main.05310047.chunk.css",
+    "static/js/main.66bc1ee0.chunk.js"
+  ]
+}
