@@ -1,0 +1,13 @@
+// Base
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./base.scss";
+
+// Components
+@import "./components/checkbox.scss";
+@import "components/yearly-tax";
+@import "./components/input.scss";
+@import "./components/button.scss";
+@import "./components/form-deduction.scss";
+@import "./components/main.scss";
+@import "./components/tax-deduction.scss";

@@ -1,0 +1,101 @@
+@mixin button-close($rotate) {
+  content: "";
+  position: absolute;
+  transform: rotate($rotate);
+  background-color: #ea0029;
+}
+
+@mixin line-button-close-mob {
+  top: 10px;
+  right: 4px;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+@mixin line-button-close-tab {
+  top: 20px;
+  right: 8px;
+  width: 24px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+.tax-deduction {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  padding: 16px;
+
+  @media (min-width: $tablet-width) {
+    width: 455px;
+    padding: 32px;
+    border-radius: 30px;
+    background-color: #ffffff;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 555px;
+  }
+}
+
+.tax-deduction__title {
+  @include font-large-mob;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+
+  @media (min-width: $tablet-width) {
+    @include font-large-tab;
+    margin-top: 0;
+  }
+}
+
+.tax-deduction__button-close-popup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  &::before {
+    @include line-button-close-mob;
+    @include button-close(45deg);
+
+    @media (min-width: $tablet-width) {
+      @include line-button-close-tab;
+    }
+  }
+
+  &::after {
+    @include line-button-close-mob;
+    @include button-close(-45deg);
+
+    @media (min-width: $tablet-width) {
+      @include line-button-close-tab;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 16px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.tax-deduction__description {
+  @include font-small-mob;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #808080;
+
+  @media (min-width: $tablet-width) {
+    @include font-small-tab;
+  }
+}

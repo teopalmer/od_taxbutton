@@ -1,0 +1,29 @@
+@mixin font-small-mob {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin font-middle-mob {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-large-mob {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin font-small-tab {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-middle-tab {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-large-tab {
+  font-size: 28px;
+  line-height: 40px;
+}

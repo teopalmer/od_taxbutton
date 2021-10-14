@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+
+  &--start {
+    height: 100vh;
+    background: $gradient-red;
+  }
+
+  
+  &--popup {
+    background-color: #ffffff;
+
+    @media (min-width: $tablet-width) {
+      background-color: #b3b3b3;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.main__wrapper {
+  display: flex;
+  width: 320px;
+  margin: 0 auto;
+
+  &--start {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 455px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 550px;
+  }
+}
