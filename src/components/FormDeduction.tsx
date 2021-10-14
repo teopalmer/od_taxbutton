@@ -1,48 +1,48 @@
 import React, { useState } from 'react';
 
-import Button from './Button';
+import StartButton from './StartButton';
 import YearlyTax from './YearlyTax';
-import Input from './Input';
+import SalaryInput from './SalaryInput';
+
 let salaryInMonth = 0;
 
-const MAX_TAX_DEDUCTION = 260000;
+const MAX_TAX = 260000;
 
 const getDeductionList = (taxDeduction: number, rest: number, numberOfYear: number) => {
 
-  const taxDeductionList = new Array(Math.round(numberOfYear)).fill(Math.round(taxDeduction));
+  const taxList = new Array(Math.round(numberOfYear)).fill(Math.round(taxDeduction));
 
   if (rest !== 0) {
-    taxDeductionList.push(Math.round(rest));
+    taxList.push(Math.round(rest));
   }
 
-  return taxDeductionList;
+  return taxList;
 };
 
-const FormDeduction: React.FC = () => {
-  const [deductionList, setDeductionList] = useState<Array<number>>([]);
+const TaxSection: React.FC = () => {
+  const [deductionList, setList] = useState<Array<number>>([]);
 
   const onChangeInput = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setDeductionList([]);
+    setList([]);
     salaryInMonth = +evt.target.value;
   }
 
-
   const showDeduction = () => {
-    console.log("salary is %d", salaryInMonth);
+
     if (salaryInMonth < 10000) {
-      setDeductionList([]);
+      setList([]);
       return;
     }
 
-      const taxDeductionInYear = (salaryInMonth * 12) * 0.13;
-      const rest = MAX_TAX_DEDUCTION % taxDeductionInYear;
-      const numberOfYears = (MAX_TAX_DEDUCTION - rest) / taxDeductionInYear;
-      const taxDeductionList = getDeductionList(taxDeductionInYear, rest, numberOfYears);
+      const taxByYear = (salaryInMonth * 12) * 0.13;
+      const rest = MAX_TAX % taxByYear;
+      const numberOfYears = (MAX_TAX - rest) / taxByYear;
+      const taxList = getDeductionList(taxByYear, rest, numberOfYears);
 
-      setDeductionList(taxDeductionList);
+      setList(taxList);
   };
 
-  const emptyFunc = () => `Empty`;
+  const empty = () => ``;
 
   return (
     <form
@@ -52,7 +52,7 @@ const FormDeduction: React.FC = () => {
       <label className="form-deduction__title" htmlFor="salary">
         Ваша зарплата в месяц
       </label>
-      <Input
+      <SalaryInput
         className={'form-deduction__sum'}
         isRequired={true}
         name={'salary'}
@@ -73,25 +73,25 @@ const FormDeduction: React.FC = () => {
           Что уменьшаем?
         </strong>
         <div className="form-deduction__group-buttons">
-          <Button
+          <StartButton
             className={`form-deduction__button-pay`}
             isVisibleTitle={true}
-            onClick={emptyFunc}
+            onClick={empty}
             prefix={`decrease button--decrease-active`}
             title={`Платёж`}
           />
-          <Button
+          <StartButton
             isVisibleTitle={true}
-            onClick={emptyFunc}
+            onClick={empty}
             prefix={`decrease`}
             title={`Срок`}
           />
         </div>
       </div>
-      <Button
+      <StartButton
         className={`form-deduction__button-submit`}
         isVisibleTitle={true}
-        onClick={emptyFunc}
+        onClick={empty}
         prefix={`add`}
         title={`Добавить`}
         type={`submit`}
@@ -100,4 +100,4 @@ const FormDeduction: React.FC = () => {
   );
 };
 
-export default FormDeduction;
+export default TaxSection;

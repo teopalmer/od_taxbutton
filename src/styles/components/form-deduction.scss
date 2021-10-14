@@ -7,12 +7,12 @@
 }
 
 .form-deduction__title {
-  @include font-middle-mob;
+  @include font-middle-mobile;
   margin-bottom: 8px;
   font-weight: 500;
 
   @media (min-width: $tablet-width) {
-    @include font-middle-tab;
+    @include font-middle-tablet;
   }
 }
 
@@ -65,7 +65,7 @@
 }
 
 .form-deduction__action {
-  @include font-small-mob;
+  @include font-small-mobile;
   height: 24px;
   width: 76px;
   left: 32px;
@@ -80,7 +80,7 @@
 ;
 
   @media (min-width: $tablet-width) {
-    @include font-small-tab;
+    @include font-small-tablet;
   }
 }
 
